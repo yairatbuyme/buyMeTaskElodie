@@ -1,0 +1,14 @@
+PATH
+  remote: .
+  specs:
+    ember-source (1.10.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ember-source!
