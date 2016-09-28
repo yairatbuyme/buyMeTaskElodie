@@ -10,21 +10,14 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::get('/', 'TasksController@index');
-Route::get('/tasks', 'TasksController@index');
-Route::get('/tasks/create', 'TasksController@create');
-Route::get('/tasks/{id}', 'TasksController@destroy');
+
+//Load Ember
+Route::get('/', 'BaseController@index');
+
+//Data requests
+
 Route::resource('tasks', 'TasksController');
 
-
-Route::get('/db', function(){
-	DB::table('tasks')->insert([
-  			'name' => 'do',
-				'done' => 1,
- ]);
-
-	return DB::table('tasks')->get();
-});
 
 
 

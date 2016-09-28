@@ -1,5 +1,7 @@
 @extends('layouts.main')
 @section('content')
+
+  // pass to client side as Ember template
   {{ link_to_route('tasks.create', '+')}}
 	<h2>MyList</h2>
 

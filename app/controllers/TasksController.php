@@ -14,12 +14,14 @@ class TasksController extends \BaseController {
 	public function index()
 	{
 		$tasks = Task::all();
-		Response::json(array(
-        'error' => false,
-        'tasks' => $tasks->toArray()),
-        200
-    );
-		return View::make('tasks.index')->withTasks($tasks);
+
+
+        return Response::json(array(
+            'error' => false,
+            'tasks' => $tasks),
+            200
+        );
+
 	}
 
 

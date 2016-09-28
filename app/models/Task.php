@@ -1,5 +1,8 @@
 <?php
 
-class Task extends Eloquent {}
+class Task extends Eloquent {
+
+
+}
 
  ?>

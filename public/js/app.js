@@ -1,20 +1,28 @@
-var App = Ember.Application.create();
+/* global Ember */
+App = Ember.Application.create();
 
 
-App.Task = DS.Model.extend({
-    "name"       : DS.attr(),
-    "done"     : DS.attr()
+App.Router.map(function () {
+    this.resource('tasks', { path: '/' });
+    this.resource('newTask', { path: '/newTask' });
 });
 
-App.Router.map(function() {
-    this.resource("index", {
-        "path" : "/"
-    });
+
+App.TasksRoute = Ember.Route.extend({
+
+    model: function () {
+         return $.getJSON('/tasks');
+    },
+
+
 });
 
-var store = this.store;
+App.TasksController = Ember.ObjectController.extend({
 
-store.createRecord('task', {
-  name: 'task1',
-  done: '1'
+    total: function () {
+        var tasks = this.get('tasks');
+        return tasks.length;
+    }.property('total', 'tasks'),
+
 });
+
